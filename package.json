@@ -57,6 +57,7 @@
     ],
     "setupFilesAfterEnv": [
       "<rootDir>/src/utils/setUpEnzyme.js"
+      
     ],
     "snapshotSerializers": [
       "enzyme-to-json/serializer"
