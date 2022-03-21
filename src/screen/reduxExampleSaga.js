@@ -14,6 +14,9 @@ import {connect} from 'react-redux';
 import {ActionCreators} from '../../src/reduxSaga/actions';
 import * as NavigationService from '../navigation/navigationService';
 import {openDatabase} from 'react-native-sqlite-storage';
+import InputTodo from './inputTodo';
+import Login from './Login';
+
 
 class ReduxExampleSaga extends Component {
   constructor(props) {
@@ -141,7 +144,7 @@ class ReduxExampleSaga extends Component {
     // console.log('main data' + JSON.stringify(data));
     return (
       <View style={styles.container}>
-        {isLoading ? (
+        {/* {isLoading ? (
           <ActivityIndicator size={'large'} style={{alignSelf: 'center'}} />
         ) : (
           <FlatList
@@ -151,7 +154,9 @@ class ReduxExampleSaga extends Component {
             renderItem={({item, index}) => this.renderMovieList(item, index)}
             ListFooterComponent={this.renderFooterItem()}
           />
-        )}
+        )} */}
+        {/* <InputTodo/> */}
+        <Login></Login>
       </View>
     );
   }
