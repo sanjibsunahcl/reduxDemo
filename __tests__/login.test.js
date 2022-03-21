@@ -17,6 +17,9 @@ it('renders default elements', () => {
 it('shows invalid input messages', () => {
   const {getByTestId, getByText} = render(<Login />);
 
+  const appData = render(<Login />);
+  expect(appData).toMatchSnapshot();
+
   fireEvent.press(getByTestId('SignIn.Button'));
 
   getByText('Invalid username.');
@@ -24,7 +27,7 @@ it('shows invalid input messages', () => {
 });
 
 it('shows invalid user name error message', () => {
-  const {getByTestId, getByText, queryAllByText} = render(<Login />);
+  const {getByTestId, getByText, queryAllByText, debug} = render(<Login />);
 
   fireEvent.changeText(getByTestId('SignIn.passwordInput'), 'asdf');
 
@@ -37,6 +40,8 @@ it('shows invalid user name error message', () => {
 
   getByText('Invalid username.');
   expect(queryAllByText('Invalid password.').length).toBe(0);
+
+  // debug();  to show internal debug
 });
 
 it('shows invalid password error message', () => {
@@ -68,5 +73,5 @@ it('handles valid input submission', async () => {
   expect(fetch.mock.calls).toMatchSnapshot();
   await act(flushMicrotasksQueue);
 
-  expect(pushMock).toBeCalledWith('App');
+  expect(pushMock).toBeCalledWith('Details');
 });
