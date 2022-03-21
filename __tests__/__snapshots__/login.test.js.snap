@@ -3,11 +3,191 @@
 exports[`handles valid input submission 1`] = `
 Array [
   Array [
-    "https://jsonplaceholder.typicode.com/users",
+    "http://jsonplaceholder.typicode.com/users",
     Object {
       "body": "{\\"username\\":\\"example\\",\\"password\\":\\"asdf\\"}",
       "method": "POST",
     },
   ],
 ]
+`;
+
+exports[`shows invalid input messages 1`] = `
+<View
+  onLayout={[Function]}
+  style={
+    Object {
+      "backgroundColor": "#fff",
+      "justifyContent": "center",
+      "paddingHorizontal": 30,
+    }
+  }
+>
+  <View
+    style={
+      Object {
+        "bottom": 0,
+      }
+    }
+  >
+    <Text
+      style={
+        Object {
+          "color": "#353031",
+          "fontSize": 34,
+          "fontWeight": "bold",
+          "marginBottom": 10,
+        }
+      }
+    >
+      Login
+    </Text>
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#f4f6f8",
+            "borderColor": "#f4f6f8",
+            "borderRadius": 10,
+            "borderWidth": 1,
+            "marginVertical": 5,
+            "paddingHorizontal": 15,
+            "paddingVertical": 10,
+          },
+        ]
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#b4b6b8",
+            "fontSize": 10,
+          }
+        }
+      >
+        Username
+      </Text>
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+          }
+        }
+      >
+        <TextInput
+          autoCapitalize="none"
+          onChangeText={[Function]}
+          placeholder="example"
+          style={
+            Object {
+              "color": "#353031",
+              "flex": 1,
+              "fontSize": 14,
+              "fontWeight": "bold",
+              "marginRight": 10,
+              "marginTop": 3,
+            }
+          }
+          testID="SignIn.usernameInput"
+        />
+      </View>
+    </View>
+    <View
+      style={
+        Array [
+          Object {
+            "backgroundColor": "#f4f6f8",
+            "borderColor": "#f4f6f8",
+            "borderRadius": 10,
+            "borderWidth": 1,
+            "marginVertical": 5,
+            "paddingHorizontal": 15,
+            "paddingVertical": 10,
+          },
+        ]
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "#b4b6b8",
+            "fontSize": 10,
+          }
+        }
+      >
+        Password
+      </Text>
+      <View
+        style={
+          Object {
+            "flexDirection": "row",
+            "justifyContent": "space-between",
+          }
+        }
+      >
+        <TextInput
+          autoCapitalize="none"
+          onChangeText={[Function]}
+          placeholder="***"
+          secureTextEntry={true}
+          style={
+            Object {
+              "color": "#353031",
+              "flex": 1,
+              "fontSize": 14,
+              "fontWeight": "bold",
+              "marginRight": 10,
+              "marginTop": 3,
+            }
+          }
+          testID="SignIn.passwordInput"
+        />
+      </View>
+    </View>
+    <View
+      style={
+        Object {
+          "paddingVertical": 10,
+        }
+      }
+    />
+    <View
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#9374b7",
+          "borderRadius": 10,
+          "justifyContent": "center",
+          "marginTop": 10,
+          "opacity": 1,
+          "paddingVertical": 16,
+        }
+      }
+      testID="SignIn.Button"
+    >
+      <Text
+        style={
+          Object {
+            "color": "#fff",
+            "fontSize": 14,
+            "fontWeight": "bold",
+          }
+        }
+      >
+        Login
+      </Text>
+    </View>
+  </View>
+</View>
 `;
