@@ -1,7 +1,9 @@
 import React, {useState} from 'react';
 import {StyleSheet, Text, KeyboardAvoidingView} from 'react-native';
+import ApiUtils from '../utils/apiUtils';
 
 import {Input, Button, ErrorText} from './components/Form';
+import * as NavigationService from '../navigation/navigationService';
 
 const useLoginFormState = ({navigation}) => {
   const [username, setUsername] = useState('');
@@ -36,16 +38,24 @@ const useLoginFormState = ({navigation}) => {
         setSubmit(true);
 
         if (isUsernameValid && isPasswordValid) {
-          fetch('https://jsonplaceholder.typicode.com/users', {
+          // const responseData =  ApiUtils.get(
+          //   'http://jsonplaceholder.typicode.com/users',
+          // );
+          // console.log('respnbsnn' + JSON.stringify(responseData));
+          // NavigationService.navigateTo('Details');
+          fetch('http://jsonplaceholder.typicode.com/users', {
             method: 'POST',
             body: JSON.stringify({
               username,
               password,
             }),
           })
-            .then(response => response.json())
-            .then(() => {
-            //   navigation.push('App');
+            // .then(response => response.json())
+            .then(response => {
+              console.log('response json' + JSON.stringify(response.json()));
+              NavigationService.navigateTo('Details')
+              navigation.push('Details');
+              // NavigationService.navigateTo('Details')
             })
             .catch(error => {
               console.log('error', error);
@@ -96,10 +106,10 @@ export default ({navigation}) => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    // flex: 1,
     backgroundColor: '#fff',
     justifyContent: 'center',
-    paddingHorizontal: 40,
+    paddingHorizontal: 30,
   },
   headerText: {
     color: '#353031',
