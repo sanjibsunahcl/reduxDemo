@@ -28,18 +28,28 @@ const CounterTest = () => {
 
   return (
     <View style={styles.screenContainer}>
+      <Text
+        style={{
+          alignSelf: 'center',
+          fontSize: 25,
+          color: '#3D2C8D',
+          fontWeight: 'bold',
+          marginBottom: 20
+        }}>
+        Redux Test
+      </Text>
       <View style={styles.counterContainer}>
         <TouchableOpacity onPress={handleDecrement} style={styles.container}>
-          <Text style={styles.text}>{'-'}</Text>
+          <Text style={{color: 'white', fontSize: 28}}>{'-'}</Text>
         </TouchableOpacity>
         <Text style={styles.text} testID={'count-value'}>
           {count}
         </Text>
         <TouchableOpacity onPress={handleIncrement} style={styles.container}>
-          <Text style={styles.text}>{'+'}</Text>
+          <Text style={{color: 'white', fontSize: 28}}>{'+'}</Text>
         </TouchableOpacity>
       </View>
-      <View style={styles.incrementContainer}>
+      {/* <View style={styles.incrementContainer}>
         <Text style={[styles.text, styles.incrementText]}>
           Current increment:{' '}
         </Text>
@@ -50,22 +60,22 @@ const CounterTest = () => {
           placeholder="increment"
           keyboardType="numeric"
         />
-      </View>
+      </View> */}
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  screenContainer: {flex: 1, backgroundColor: '#282a36'},
+  screenContainer: {flex: 1, justifyContent: 'center'},
   counterContainer: {
     justifyContent: 'center',
     alignItems: 'center',
-    height: 130,
-    marginTop: 50,
+    // height: 130,
+    // marginTop: 50,
     flexDirection: 'row',
   },
   text: {
-    color: '#f8f8f2',
+    color: 'black',
     fontSize: 20,
     marginHorizontal: 30,
   },
@@ -88,8 +98,8 @@ const styles = StyleSheet.create({
   },
   container: {
     backgroundColor: '#3D2C8D',
-    width: 50,
-    height: 50,
+    width: 60,
+    height: 60,
     borderRadius: 60,
     justifyContent: 'center',
     alignItems: 'center',
