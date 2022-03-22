@@ -1,0 +1,116 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Testing counter page Should start with the current count of 0 1`] = `
+<View
+  style={
+    Object {
+      "flex": 1,
+      "justifyContent": "center",
+    }
+  }
+>
+  <Text
+    style={
+      Object {
+        "alignSelf": "center",
+        "color": "#3D2C8D",
+        "fontSize": 25,
+        "fontWeight": "bold",
+        "marginBottom": 20,
+      }
+    }
+  >
+    Redux Test
+  </Text>
+  <View
+    style={
+      Object {
+        "alignItems": "center",
+        "flexDirection": "row",
+        "justifyContent": "center",
+      }
+    }
+  >
+    <View
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#3D2C8D",
+          "borderRadius": 60,
+          "height": 60,
+          "justifyContent": "center",
+          "opacity": 1,
+          "width": 60,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "white",
+            "fontSize": 28,
+          }
+        }
+      >
+        -
+      </Text>
+    </View>
+    <Text
+      style={
+        Object {
+          "color": "black",
+          "fontSize": 20,
+          "marginHorizontal": 30,
+        }
+      }
+      testID="count-value"
+    >
+      0
+    </Text>
+    <View
+      accessible={true}
+      collapsable={false}
+      focusable={true}
+      onClick={[Function]}
+      onResponderGrant={[Function]}
+      onResponderMove={[Function]}
+      onResponderRelease={[Function]}
+      onResponderTerminate={[Function]}
+      onResponderTerminationRequest={[Function]}
+      onStartShouldSetResponder={[Function]}
+      style={
+        Object {
+          "alignItems": "center",
+          "backgroundColor": "#3D2C8D",
+          "borderRadius": 60,
+          "height": 60,
+          "justifyContent": "center",
+          "opacity": 1,
+          "width": 60,
+        }
+      }
+    >
+      <Text
+        style={
+          Object {
+            "color": "white",
+            "fontSize": 28,
+          }
+        }
+      >
+        +
+      </Text>
+    </View>
+  </View>
+</View>
+`;
