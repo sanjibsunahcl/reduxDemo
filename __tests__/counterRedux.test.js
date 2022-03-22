@@ -21,11 +21,16 @@ describe('Testing counter page', () => {
   });
 
   it('Should start with the current count of 0', () => {
-    const {getByText, getByTestId} = renderWithRedux(<CounterTest />);
+    const {getByText, getByTestId, asFragment} = renderWithRedux(
+      <CounterTest />,
+    );
 
     fireEvent.press(getByText('+'));
     console.log('fjhdfhgjh' + getByTestId('count-value').props.children);
     expect(getByTestId('count-value').props.children).toBe(1);
+
+    const data = renderWithRedux(<CounterTest />);
+    expect(data).toMatchSnapshot();
 
     // const count = getByText('0');
 
