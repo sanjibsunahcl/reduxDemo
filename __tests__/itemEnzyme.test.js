@@ -3,7 +3,7 @@ import React from 'react';
 import {shallow} from 'enzyme';
 import ItemsEnzyme from '../src/screen/itemEnzyme';
 
-import renderer from 'react-test-renderer';
+import renderer, {act} from 'react-test-renderer';
 
 // This test just uses Jest snapshot testing
 it('renders correctly, test using Jest', () => {
@@ -23,5 +23,19 @@ describe('Check view item', () => {
     expect(
       wrapper.findWhere(node => node.prop('testID') === 'todo-item'),
     ).toBeTruthy();
+  });
+});
+
+//to update the state
+describe('Check Count test', () => {
+  test('check count set up', () => {
+    // const onCountChange = jest.fn();
+    let wrapper = renderer.create(<ItemsEnzyme />);
+    const btn = wrapper.root.findByProps({testID: 'myButton'}).props;
+    act(() => btn.onPress());
+    const text = wrapper.root.findByProps({testID: 'countText'}).props;
+    // console.log('hgghdhgdhh' + JSON.stringify(text.children[1]));
+    // onCountChange={onCountChange}
+    expect(text.children[1]).toEqual(3);
   });
 });
