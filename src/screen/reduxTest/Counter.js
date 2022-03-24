@@ -28,16 +28,7 @@ const CounterTest = () => {
 
   return (
     <View style={styles.screenContainer}>
-      <Text
-        style={{
-          alignSelf: 'center',
-          fontSize: 25,
-          color: '#3D2C8D',
-          fontWeight: 'bold',
-          marginBottom: 20
-        }}>
-        Redux Test
-      </Text>
+      <Text style={styles.header}>Redux Test</Text>
       <View style={styles.counterContainer}>
         <TouchableOpacity onPress={handleDecrement} style={styles.container}>
           <Text style={{color: 'white', fontSize: 28}}>{'-'}</Text>
@@ -75,9 +66,10 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
   },
   text: {
-    color: 'black',
-    fontSize: 20,
+    color: '#3D2C8D',
+    fontSize: 24,
     marginHorizontal: 30,
+    fontWeight: 'bold',
   },
   incrementContainer: {
     flexDirection: 'row',
@@ -103,6 +95,13 @@ const styles = StyleSheet.create({
     borderRadius: 60,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  header: {
+    alignSelf: 'center',
+    fontSize: 25,
+    color: '#3D2C8D',
+    fontWeight: 'bold',
+    marginBottom: 20,
   },
 });
 
