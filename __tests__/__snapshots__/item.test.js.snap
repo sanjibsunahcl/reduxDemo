@@ -10,8 +10,10 @@ exports[`Item snapshot 1`] = `
     }
   }
 >
-  <Text>
-    Sanjib
+  <Text
+    testID="dataId"
+  >
+    
   </Text>
   <Text
     style={
@@ -72,6 +74,53 @@ exports[`Item snapshot 1`] = `
         }
       >
         Click
+      </Text>
+    </View>
+  </View>
+  <Text
+    testID="countText"
+  >
+    4
+  </Text>
+  <View
+    accessibilityRole="button"
+    accessible={true}
+    collapsable={false}
+    focusable={true}
+    onClick={[Function]}
+    onResponderGrant={[Function]}
+    onResponderMove={[Function]}
+    onResponderRelease={[Function]}
+    onResponderTerminate={[Function]}
+    onResponderTerminationRequest={[Function]}
+    onStartShouldSetResponder={[Function]}
+    style={
+      Object {
+        "opacity": 1,
+      }
+    }
+    testID="countButton"
+  >
+    <View
+      style={
+        Array [
+          Object {},
+        ]
+      }
+    >
+      <Text
+        style={
+          Array [
+            Object {
+              "color": "#007AFF",
+              "fontSize": 18,
+              "margin": 8,
+              "textAlign": "center",
+            },
+          ]
+        }
+      >
+        Press
       </Text>
     </View>
   </View>
