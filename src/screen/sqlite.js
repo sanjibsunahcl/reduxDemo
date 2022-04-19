@@ -19,6 +19,7 @@ export default SQLiteScreen = props => {
   let [userName, setUserName] = useState('');
   let [userContact, setUserContact] = useState('');
   let [userAddress, setUserAddress] = useState('');
+  const [flatListData, setFlatListData] = useState('');
 
   useEffect(() => {
     var db = openDatabase({name: 'UserDatabase.db'});
@@ -29,7 +30,8 @@ export default SQLiteScreen = props => {
           temp.push(results.rows.item(i));
         }
         // setFlatListItems(temp);
-        console.log(JSON.stringify(temp));
+        setFlatListData(temp);
+        console.log('sqlIte data ' + JSON.stringify(temp));
       });
     });
   }, []);
@@ -38,15 +40,17 @@ export default SQLiteScreen = props => {
     var db = openDatabase({name: 'UserDatabase.db'});
 
     console.log(userName, userContact, userAddress);
-    db.transaction(function (tx) {
+    db.transaction(tx => {
       tx.executeSql(
         'INSERT INTO table_user (user_name, user_contact, user_address) VALUES (?,?,?)',
         [userName, userContact, userAddress],
         (tx, results) => {
           if (results.rowsAffected > 0) {
+            console.log('Inrernal Data ' + JSON.stringify(results));
             Alert.alert(
               'Success',
-              'You are Registered Successfully',
+              // 'You are Registered Successfully',
+              `You are Registered Successfully ${JSON.stringify(flatListData)}`,
               [
                 {
                   text: 'Ok',
@@ -66,7 +70,13 @@ export default SQLiteScreen = props => {
   return (
     <SafeAreaView style={{flex: 1}}>
       <View style={{flex: 1, backgroundColor: 'white'}}>
-        <Text style={{color: 'black', fontSize: 20, alignSelf: 'center',margin: 20}}>
+        <Text
+          style={{
+            color: 'black',
+            fontSize: 20,
+            alignSelf: 'center',
+            margin: 20,
+          }}>
           SQLite Entry
         </Text>
         <ScrollView keyboardShouldPersistTaps="handled">
@@ -93,7 +103,6 @@ export default SQLiteScreen = props => {
               multiline={true}
               style={{textAlignVertical: 'top', padding: 10}}
             />
-
             <TouchableOpacity style={styles.button} onPress={registerUser}>
               <Text style={styles.text}>{'Submit'}</Text>
             </TouchableOpacity>
