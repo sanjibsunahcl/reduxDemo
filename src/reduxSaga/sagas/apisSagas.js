@@ -18,7 +18,7 @@ function* actionWatcher() {
 function* getResponseData() {
   yield put(apisAction.setResponseLoaderAction(true));
   try {
-    const response = yield ApiUtils.get('https://reactnative.dev/movies.json');
+    const response = yield ApiUtils.get('http://reactnative.dev/movies.json');
     console.log('api log response', response);
     // if (response.success) {
     yield put(apisAction.setactionApiData(response));
