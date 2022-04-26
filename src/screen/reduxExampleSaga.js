@@ -9,13 +9,15 @@ import {
   Image,
 } from 'react-native';
 import {bindActionCreators} from 'redux';
-import {connect} from 'react-redux';
+import {connect, Provider} from 'react-redux';
 // import {ActionCreators} from '../../src/redux/actions';
 import {ActionCreators} from '../../src/reduxSaga/actions';
 import * as NavigationService from '../navigation/navigationService';
 import {openDatabase} from 'react-native-sqlite-storage';
 import InputTodo from './inputTodo';
 import Login from './Login';
+import store from '../testRedux/stores/store';
+import CounterTest from './reduxTest/Counter';
 
 
 class ReduxExampleSaga extends Component {
@@ -68,7 +70,7 @@ class ReduxExampleSaga extends Component {
           }
         });
       })
-      .catch((error: any) => {
+      .catch(error => {
         console.log(error);
         firstTimeUsage = false;
       });
@@ -144,7 +146,7 @@ class ReduxExampleSaga extends Component {
     // console.log('main data' + JSON.stringify(data));
     return (
       <View style={styles.container}>
-        {/* {isLoading ? (
+        {isLoading ? (
           <ActivityIndicator size={'large'} style={{alignSelf: 'center'}} />
         ) : (
           <FlatList
@@ -154,9 +156,12 @@ class ReduxExampleSaga extends Component {
             renderItem={({item, index}) => this.renderMovieList(item, index)}
             ListFooterComponent={this.renderFooterItem()}
           />
-        )} */}
+        )}
         {/* <InputTodo/> */}
-        <Login></Login>
+        {/* <Login></Login> */}
+        {/* <Provider store={store}>
+          <CounterTest></CounterTest>
+        </Provider> */}
       </View>
     );
   }
